@@ -1,115 +1,82 @@
 <!DOCTYPE html><html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Depy - IA com Aura Viva</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }body {
-  background: radial-gradient(circle at top, #0b0b1a, #050510);
-  color: white;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depy</title><style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+
+body{
+  background: radial-gradient(circle at top,#0b0b1a,#050510);
+  color:white;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-.container {
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
+.container{max-width:800px;padding:20px;}
+
+.logo{
+  width:240px;
+  margin-bottom:30px;
+  animation:float 5s ease-in-out infinite;
 }
 
-.logo {
-  font-size: 48px;
-  font-weight: bold;
-  letter-spacing: 4px;
-  margin-bottom: 10px;
-  color: #7c5cff;
-  text-shadow: 0 0 20px #7c5cff;
+@keyframes float{
+  0%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-12px) scale(1.03)}
+  100%{transform:translateY(0) scale(1)}
 }
 
-.subtitle {
-  font-size: 18px;
-  opacity: 0.8;
-  margin-bottom: 40px;
+.headline{font-size:28px;font-weight:bold;margin-bottom:15px;}
+.sub{font-size:16px;opacity:.7;margin-bottom:40px;}
+
+.btn{
+  padding:16px 32px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+  background:linear-gradient(90deg,#7c5cff,#00d4ff);
+  color:white;
+  box-shadow:0 0 25px rgba(124,92,255,.5);
+  transition:.3s;
 }
 
-.aura {
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 40px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #7c5cff, #00d4ff, #ff7a18);
-  animation: pulse 2.5s infinite;
-  box-shadow: 0 0 60px rgba(124, 92, 255, 0.6);
-}
+.btn:hover{transform:scale(1.05);}
 
-@keyframes pulse {
-  0% { transform: scale(1); filter: brightness(1); }
-  50% { transform: scale(1.2); filter: brightness(1.4); }
-  100% { transform: scale(1); filter: brightness(1); }
-}
-
-.buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn {
-  padding: 14px 28px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s;
-}
-
-.primary {
-  background: linear-gradient(90deg, #7c5cff, #00d4ff);
-  color: white;
-  box-shadow: 0 0 20px rgba(124, 92, 255, 0.4);
-}
-
-.secondary {
-  background: transparent;
-  border: 1px solid #7c5cff;
-  color: #7c5cff;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-}
-
-.features {
-  margin-top: 40px;
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">DEPY</div>
-    <div class="subtitle">Uma IA com presença. Uma aura que responde você.</div><div class="aura"></div>
-
-<div class="buttons">
-  <button class="btn primary" onclick="alert('Entrar no Depy (fluxo gratuito)')">Começar Grátis</button>
-  <button class="btn secondary" onclick="alert('Página Pro em breve')">Versão Pro</button>
-</div>
-
-<div class="features">
-  Conversa inteligente • Experiência emocional • Interface viva
-</div>
-
-  </div>
+.footer{margin-top:40px;font-size:14px;opacity:.5;}
+</style></head><body>
+<div class="container"><!-- LOGO PREMIUM (AURA REALISTA) --><svg class="logo" viewBox="0 0 300 300"><defs>
+  <radialGradient id="core" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+    <stop offset="100%" stop-color="#0b0b1a" stop-opacity="1"/>
+  </radialGradient>  <radialGradient id="aura" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#7c5cff"/>
+    <stop offset="40%" stop-color="#00d4ff"/>
+    <stop offset="75%" stop-color="#ff7a18"/>
+    <stop offset="100%" stop-color="transparent"/>
+  </radialGradient>  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="15" result="blur"/>
+    <feMerge>
+      <feMergeNode in="blur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+</defs><!-- aura externa --><circle cx="150" cy="150" r="100" fill="url(#aura)" filter="url(#glow)">
+  <animate attributeName="r" values="95;105;95" dur="4s" repeatCount="indefinite"/>
+</circle><!-- núcleo --><circle cx="150" cy="150" r="60" fill="url(#core)"/><!-- texto --><text x="50%" y="53%" text-anchor="middle" fill="#0b0b1a" font-size="36" font-weight="bold" dy=".3em">
+  Depy
+</text></svg><div class="headline">
+Cada vez mais pessoas estão descobrindo o Depy.<br>
+Agora é a sua vez.
+</div><div class="sub">
+Uma inteligência que responde… e evolui com você.
+</div><button class="btn" onclick="window.location.href='https://depy-app.vercel.app'">
+Acessar o Depy
+</button><div class="footer">
+O Depy não é fixo. Ele muda com você.
+</div></div>
 </body>
 </html>
