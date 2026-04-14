@@ -1,8 +1,11 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Depy</title><style>
+<title>Depy</title>
+
+<style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
 body{
@@ -18,15 +21,15 @@ body{
 .container{max-width:800px;padding:20px;}
 
 .logo{
-  width:240px;
+  width:260px;
   margin-bottom:30px;
   animation:float 5s ease-in-out infinite;
 }
 
 @keyframes float{
-  0%{transform:translateY(0) scale(1)}
-  50%{transform:translateY(-12px) scale(1.03)}
-  100%{transform:translateY(0) scale(1)}
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
 }
 
 .headline{font-size:28px;font-weight:bold;margin-bottom:15px;}
@@ -41,42 +44,88 @@ body{
   background:linear-gradient(90deg,#7c5cff,#00d4ff);
   color:white;
   box-shadow:0 0 25px rgba(124,92,255,.5);
-  transition:.3s;
 }
 
-.btn:hover{transform:scale(1.05);}
-
 .footer{margin-top:40px;font-size:14px;opacity:.5;}
-</style></head><body>
-<div class="container"><!-- LOGO PREMIUM (AURA REALISTA) --><svg class="logo" viewBox="0 0 300 300"><defs>
-  <radialGradient id="core" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-    <stop offset="100%" stop-color="#0b0b1a" stop-opacity="1"/>
-  </radialGradient>  <radialGradient id="aura" cx="50%" cy="50%" r="50%">
-    <stop offset="0%" stop-color="#7c5cff"/>
-    <stop offset="40%" stop-color="#00d4ff"/>
-    <stop offset="75%" stop-color="#ff7a18"/>
-    <stop offset="100%" stop-color="transparent"/>
-  </radialGradient>  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-    <feGaussianBlur stdDeviation="15" result="blur"/>
-    <feMerge>
-      <feMergeNode in="blur"/>
-      <feMergeNode in="SourceGraphic"/>
-    </feMerge>
-  </filter>
-</defs><!-- aura externa --><circle cx="150" cy="150" r="100" fill="url(#aura)" filter="url(#glow)">
-  <animate attributeName="r" values="95;105;95" dur="4s" repeatCount="indefinite"/>
-</circle><!-- núcleo --><circle cx="150" cy="150" r="60" fill="url(#core)"/><!-- texto --><text x="50%" y="53%" text-anchor="middle" fill="#0b0b1a" font-size="36" font-weight="bold" dy=".3em">
-  Depy
-</text></svg><div class="headline">
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LOGO REALISTA -->
+<svg class="logo" viewBox="0 0 300 300">
+
+<defs>
+
+<!-- brilho externo -->
+<radialGradient id="outerGlow">
+  <stop offset="0%" stop-color="#7c5cff" stop-opacity="0.9"/>
+  <stop offset="40%" stop-color="#00d4ff" stop-opacity="0.7"/>
+  <stop offset="70%" stop-color="#a855f7" stop-opacity="0.6"/>
+  <stop offset="100%" stop-color="transparent"/>
+</radialGradient>
+
+<!-- anel principal -->
+<linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+  <stop offset="0%" stop-color="#00d4ff"/>
+  <stop offset="50%" stop-color="#7c5cff"/>
+  <stop offset="100%" stop-color="#ff7a18"/>
+</linearGradient>
+
+<!-- núcleo -->
+<radialGradient id="core">
+  <stop offset="0%" stop-color="#1a1a2e"/>
+  <stop offset="100%" stop-color="#050510"/>
+</radialGradient>
+
+<!-- glow -->
+<filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="20"/>
+</filter>
+
+</defs>
+
+<!-- glow externo -->
+<circle cx="150" cy="150" r="110" fill="url(#outerGlow)" filter="url(#blur)">
+  <animate attributeName="r" values="105;115;105" dur="4s" repeatCount="indefinite"/>
+</circle>
+
+<!-- anel -->
+<circle cx="150" cy="150" r="90" fill="none" stroke="url(#ring)" stroke-width="10"/>
+
+<!-- brilho interno -->
+<circle cx="150" cy="150" r="85" fill="none" stroke="white" stroke-opacity="0.2" stroke-width="2"/>
+
+<!-- núcleo -->
+<circle cx="150" cy="150" r="70" fill="url(#core)"/>
+
+<!-- texto -->
+<text x="50%" y="53%" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="bold" dy=".3em">
+Depy
+</text>
+
+</svg>
+
+<div class="headline">
 Cada vez mais pessoas estão descobrindo o Depy.<br>
 Agora é a sua vez.
-</div><div class="sub">
+</div>
+
+<div class="sub">
 Uma inteligência que responde… e evolui com você.
-</div><button class="btn" onclick="window.location.href='https://depy-app.vercel.app'">
+</div>
+
+<button class="btn" onclick="window.location.href='https://depy-app.vercel.app'">
 Acessar o Depy
-</button><div class="footer">
+</button>
+
+<div class="footer">
 O Depy não é fixo. Ele muda com você.
-</div></div>
+</div>
+
+</div>
+
 </body>
 </html>
