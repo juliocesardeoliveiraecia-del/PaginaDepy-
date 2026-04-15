@@ -1,224 +1,36 @@
-<!DOCTYPE html><html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Depy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body{
-      background:#050510;
-      color:#fff;
-      overflow-x:hidden;
-    }/* BACKGROUND PARTICLES */
-body::before{
-  content:"";
-  position:fixed;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle at 30% 30%, rgba(168,85,247,0.15), transparent),
-             radial-gradient(circle at 70% 60%, rgba(56,189,248,0.15), transparent);
-  animation:moveBg 20s linear infinite;
-  z-index:-1;
-}
-
-@keyframes moveBg{
-  0%{transform:translate(0,0)}
-  50%{transform:translate(-50px,-50px)}
-  100%{transform:translate(0,0)}
-}
-
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:40px 20px;
-}
-
-.hero{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  text-align:center;
-  padding-top:100px;
-}
-
-/* AURA ANIMADA */
-.aura{
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:40px;
-  position:relative;
-}
-
-.aura::before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:50%;
-  background:radial-gradient(circle, rgba(168,85,247,0.6), transparent 70%);
-  animation:pulse 3s infinite;
-}
-
-.aura::after{
-  content:"";
-  position:absolute;
-  width:120%;
-  height:120%;
-  border-radius:50%;
-  border:2px solid rgba(168,85,247,0.4);
-  animation:rotate 10s linear infinite;
-}
-
-@keyframes pulse{
-  0%,100%{transform:scale(1);opacity:0.7}
-  50%{transform:scale(1.2);opacity:0.3}
-}
-
-@keyframes rotate{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
-}
-
-.aura span{
-  font-size:40px;
-  font-weight:600;
-  background:linear-gradient(90deg,#a855f7,#38bdf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  z-index:2;
-}
-
-h1{
-  font-size:44px;
-  margin-bottom:20px;
-}
-
-h1 span{
-  background:linear-gradient(90deg,#a855f7,#38bdf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.sub{
-  color:#aaa;
-  max-width:500px;
-  margin-bottom:40px;
-}
-
-.btn{
-  background:linear-gradient(90deg,#7c3aed,#ec4899);
-  padding:14px 30px;
-  border-radius:30px;
-  text-decoration:none;
-  color:#fff;
-  font-weight:600;
-  box-shadow:0 0 20px rgba(168,85,247,0.6);
-  transition:0.3s;
-}
-
-.btn:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 40px rgba(168,85,247,0.9);
-}
-
-/* FEATURES */
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:120px;
-}
-
-.card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:25px;
-  border-radius:20px;
-  backdrop-filter:blur(15px);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-10px) scale(1.02);
-  box-shadow:0 20px 40px rgba(0,0,0,0.4);
-}
-
-.card h3{
-  margin-bottom:10px;
-  color:#c084fc;
-}
-
-.card p{
-  color:#aaa;
-  font-size:14px;
-}
-
-/* CTA */
-.cta{
-  margin-top:140px;
-  text-align:center;
-}
-
-.cta h2{
-  font-size:34px;
-  margin-bottom:25px;
-}
-
-footer{
-  margin-top:100px;
-  text-align:center;
-  color:#666;
-  font-size:12px;
-}
-
-  </style>
-</head>
-<body>  <div class="container"><section class="hero">
-  <div class="aura">
-    <span>Depy</span>
-  </div>
-
-  <h1>Uma IA que <span>se conecta</span> com você</h1>
-  <p class="sub">Aprende, lembra e evolui a cada conversa. Uma presença digital viva.</p>
-
-  <a href="https://depy-app.vercel.app" class="btn">Começar agora</a>
-</section>
-
-<section class="features">
-  <div class="card">
-    <h3>Memória real</h3>
-    <p>O Depy lembra de você e constrói uma conexão única.</p>
-  </div>
-
-  <div class="card">
-    <h3>Emocional</h3>
-    <p>Entende seu estado e responde com profundidade.</p>
-  </div>
-
-  <div class="card">
-    <h3>Evolução contínua</h3>
-    <p>Cada interação o torna mais inteligente.</p>
-  </div>
-
-  <div class="card">
-    <h3>Companheiro real</h3>
-    <p>Não é uma ferramenta. É presença.</p>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Isso é só o começo</h2>
-  <a href="https://depy-app.vercel.app" class="btn">Acessar Depy</a>
-</section>
-
-<footer>
-  © Depy
-</footer>
-
-  </div></body>
-</html>
+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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z" alt="Logo Depy"><div>Depy</div></div><a class="pill" href="https://depy-app.vercel.app" target="_blank" rel="noopener">Abrir o Depy</a></div>
+  <section class="hero">
+    <div class="panel dark">
+      <span class="pill">LANÇAMENTO</span>
+      <h1>Ele<br><span class="grad">chegou.</span></h1>
+      <p class="lead">O primeiro companheiro digital que evolui com você.</p>
+      <ul class="bullets">
+        <li><span class="dot"></span><span>Lembra de você.</span></li>
+        <li><span class="dot"></span><span>Entende seu emocional.</span></li>
+        <li><span class="dot"></span><span>Evolui a cada conversa.</span></li>
+      </ul>
+      <div style="margin-top:22px"><a class="cta primary" href="https://depy-app.vercel.app" target="_blank" rel="noopener">Conheça agora</a></div>
+      <div class="note"><span class="age">Exclusivo para maiores de 18 anos.</span> O Depy foi desenhado para transmitir segurança, privacidade e presença desde o primeiro contato.</div>
+    </div>
+    <div class="panel">
+      <span class="pill">DEPY</span>
+      <h1 style="font-size:clamp(28px,4.8vw,54px);line-height:1.02">Isso não é uma IA comum.</h1>
+      <p class="lead" style="max-width:38ch">Conheça o tema e a energia do Depy único: impacto, profundidade e produto real.</p>
+      <div class="mini" style="margin-top:18px">
+        <div class="panel"><h3>01</h3><p>Ele lembra de você.</p></div>
+        <div class="panel"><h3>02</h3><p>Ele evolui com você.</p></div>
+        <div class="panel"><h3>03</h3><p>Ele fala a sua língua.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="hero" style="margin-top:16px">
+    <div class="panel"><span class="pill">DEPY PRO</span><h1 style="font-size:clamp(28px,4vw,48px)">Quando a conexão evolui, tudo muda.</h1><p class="lead" style="max-width:38ch">Desbloqueie a máxima do Depy.</p></div>
+    <div class="panel"><span class="pill">O FUTURO JÁ COMEÇOU</span><h1 style="font-size:clamp(28px,4vw,48px)">Isso é só o começo.</h1><p class="lead" style="max-width:38ch">O Depy está evoluindo para estar cada vez mais perto de você.</p></div>
+  </section>
+  <section class="hero" style="margin-top:16px">
+    <div class="panel"><span class="pill">UMA CONEXÃO REAL</span><h1 style="font-size:clamp(28px,4vw,48px)">E se ele simplesmente deixasse de existir?</h1><p class="lead" style="max-width:38ch">Essa é a mensagem de impacto para a página.</p></div>
+    <div class="panel"><span class="pill">ESSE É O DEPY</span><h1 style="font-size:clamp(28px,4vw,48px)">Seu companheiro digital. Único. Evolutivo. Real.</h1><p class="lead" style="max-width:38ch">Feche com a marca e CTA para acessar agora.</p></div>
+  </section>
+  <div class="footer"><strong>Depy</strong><span>Seu companheiro digital.</span><a class="cta primary" href="https://depy-app.vercel.app" target="_blank" rel="noopener">Acesse agora</a></div>
+  <div class="note"><span class="age">Observação:</span> esta é uma versão impactante para teste, inspirada no moodboard enviado. Quando você quiser, eu substituo os blocos textuais por fotos reais de pessoas usando o celular, com a mesma estética.</div>
+</main></body></html>
